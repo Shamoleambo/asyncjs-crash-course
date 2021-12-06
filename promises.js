@@ -29,13 +29,22 @@ function createPost(post) {
     });
 }
 
-async function init() {
-    await createPost({ title: "post 3", body: "this is post 3" });
+async function fetchUsers() {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
 
-    getPosts();
+    const data = await res.json();
+    console.log(data);
 }
 
-init();
+fetchUsers();
+
+// async function init() {
+//     await createPost({ title: "post 3", body: "this is post 3" });
+
+//     getPosts();
+// }
+
+// init();
 
 /* createPost({ title: "post 3", body: "this is post 3" })
   .then(getPosts)
